@@ -8,7 +8,7 @@ const regLink = window.location.origin + '/register';
     return (
         <div>
             <h1>
-                Login to you Account
+                Login To Your Account!
             </h1>
             <br/>
             <a

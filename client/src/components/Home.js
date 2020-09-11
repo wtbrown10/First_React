@@ -9,7 +9,7 @@ const regLink = window.location.origin + '/register';
     return (
         <div>
             <h1>
-                Welcome to our services
+                Welcome To Our Services!
             </h1>
             <br/>
             <a
