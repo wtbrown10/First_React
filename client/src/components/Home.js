@@ -27,6 +27,8 @@ const regLink = window.location.origin + '/register';
                 Login
             </a> */}
             <br/>
+            <br/>
+
             <Button 
             
             onClick= {() => {window.location = regLink}}

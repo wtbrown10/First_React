@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from './Button';
 
 export default function Register() {
 
@@ -11,11 +12,23 @@ const loginLink = window.location.origin + '/login';
                 Register Today
             </h1>
             <br/>
-            <a
+            <h3>
+                Already Registered?
+            </h3>
+
+            <Button 
+            
+            onClick={() => {
+                window.location = loginLink
+            }}
+            text = 'Login!'
+            />
+
+            {/* <a
                 href={loginLink}
             >
                 Already Have an Account? Login
-            </a>
+            </a> */}
 
         </div>
     )  

@@ -20,9 +20,9 @@ export default function Button(props) {
 
 const buttonStyle = {
 
-    padding: 10,
+    padding: 5,
     borderRadius: 5,
     fontSize: 'large',
-    backgroundColor: 'lightblue',
+    backgroundColor: 'offwhite',
     color: 'black'
 }
