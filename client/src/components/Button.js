@@ -23,6 +23,6 @@ const buttonStyle = {
     padding: 5,
     borderRadius: 5,
     fontSize: 'large',
-    backgroundColor: 'offwhite',
+    backgroundColor: 'yellow',
     color: 'black'
 }
