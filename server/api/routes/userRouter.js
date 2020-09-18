@@ -9,7 +9,7 @@ const User = require('../../models/User');
 //@path: POST *server*/user/register
 //@desc: handels user registration, will upload a new User document to MongoDB.
 //@access: public 
-router.get(
+router.post(
     '/register', 
     validateUser, 
     async (req, res) => {
@@ -17,6 +17,7 @@ router.get(
             //req.userData is defined by the validation middleware
             const newUser = await User.create(req.userData);
             res.status(201).json(newUser);
+            console.log('User Is Registerd!');
 
         } catch (err) {
             res.status(500).json({
@@ -32,12 +33,16 @@ router.get(
 //@path *server*/user/login
 //@access public
 router.put(
-    "/login", 
+    '/login', 
     checkUserCreds,
     createJWT,
     (req, res) => {
         try {
-            res.json(req.token);
+            res.json({
+                message: 'User Logged In!',
+                encrypted_Pass: req.token,
+            } );
+            console.log('User Logged In!');
         } catch (err) {
             res.status(500).json({
                 message: err.message,

@@ -8,15 +8,20 @@ const failedLogin = ( req, res) => {
 
 module.exports = async (req, res, next) => {
 
-    const { credential: c, password: p } = req.body;
-
-    c = c.trim().toLowerCase();
-    p = p.trim();
 
     try {
+
+        const { credential, password } = req.body;
+
+        if(credential == undefined || password == undefined) {
+            return res.status(400).json({
+                error: '1 or more required fields are missing!'
+            })
+        }
         const 
+        c = credential.trim().toLowerCase()
         query = {}, 
-        field = validator.isEmail(c) ? 'email' : 'username'; 
+        field = validator.isEmail(c) ? 'email' : 'username'
 
         query[field] = c;
 
@@ -40,7 +45,7 @@ module.exports = async (req, res, next) => {
                     : await bcrypt.compare(pass, user.password);
 
         if (!passTest) {
-            console.error('\nLogin Failed: Password Invalid');
+            console.error('\nLogin Failed: Password Invalid ');
             return failedLogin(req, res)    
         }
 
