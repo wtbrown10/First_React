@@ -1,6 +1,9 @@
 import React from 'react'
 import Button from './Button';
 
+import Form from './Form'
+import { regInput } from '../userInputs'
+
 export default function Register() {
 
 const loginLink = window.location.origin + '/login';

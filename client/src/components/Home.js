@@ -2,10 +2,16 @@ import React from 'react'
 
 import Button from './Button'
 
+import useTheme from '../hooks/useTheme'
+
+
+
 export default function Register() {
 
 const loginLink = window.location.origin + '/login';
 const regLink = window.location.origin + '/register';
+
+const [theme, setTheme] = useThem(true)
 
 
     return (

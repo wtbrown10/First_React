@@ -5,6 +5,9 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './Home'
 import Login from './Login'
 import Register from './Register'
+import useThem from '../hooks/useTheme'
+
+const [theme, setTheme] = useTheme(true)
 
 export default function AppRouter() {
     return (
