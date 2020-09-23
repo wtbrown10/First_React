@@ -1,20 +1,19 @@
 import React, {useState, useEffect} from 'react'
+
 import {BrowserRouter} from 'react-router-dom'
+
+import { ThemeProvider } from '../hooks/themeContext'
 
 import AppRouter from './AppRouter';
 
 
 function App(){
 
-    const [theme, setTheme] = useState(true)
-
-    useEffect( () => {
-        console.log(theme)
-    }, [theme])
-
     return (
         <BrowserRouter>
-            <AppRouter />
+            <ThemeProvider>
+                <AppRouter />
+            </ThemeProvider>
         </BrowserRouter>
     );
 }

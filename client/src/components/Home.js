@@ -4,18 +4,18 @@ import Button from './Button'
 
 import useTheme from '../hooks/useTheme'
 
-
-
 export default function Register() {
 
 const loginLink = window.location.origin + '/login';
 const regLink = window.location.origin + '/register';
 
-const [theme, setTheme] = useThem(true)
+const [theme] = useTheme()
 
 
     return (
-        <div>
+        <div
+        style={{backgroundColor: theme ? 'white' : 'black'}}
+        >
             <h1>
                 Welcome To Our Services!
             </h1>
